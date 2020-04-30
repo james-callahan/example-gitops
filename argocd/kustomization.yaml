@@ -7,3 +7,4 @@ resources:
   - github.com/argoproj/argo-cd/manifests/cluster-install?ref=c2c19f42ad78ed7a6fb70e86aed117be484feb50
 patches:
   - argo-cd-repo-server-ksops-patch.yaml
+  - argo-cd-allow-alpha-plugins-patch.yaml
