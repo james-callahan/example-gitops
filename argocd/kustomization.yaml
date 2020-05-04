@@ -8,3 +8,4 @@ resources:
 patches:
   - argo-cd-repo-server-ksops-patch.yaml
   - argo-cd-allow-alpha-plugins-patch.yaml
+  - argo-cd-import-pgp-key.yaml
