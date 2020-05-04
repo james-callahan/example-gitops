@@ -32,22 +32,13 @@ spec:
             - mountPath: /usr/local/bin/kustomize
               name: custom-tools
               subPath: kustomize
+              readOnly: true
               # Verify this matches a XDG_CONFIG_HOME=/.config env variable
             - mountPath: /.config/kustomize/plugin/viaduct.ai/v1/ksops/ksops.so
               name: custom-tools
               subPath: ksops.so
+              readOnly: true
           # 4. Set the XDG_CONFIG_HOME env variable to allow kustomize to detect the plugin
           env:
             - name: XDG_CONFIG_HOME
               value: /.config
-        ## If you use AWS or GCP KMS, don't forget to include the necessary credentials to decrypt the secrets!
-        #  - name: AWS_ACCESS_KEY_ID
-        #    valueFrom:
-        #      secretKeyRef:
-        #        name: argocd-aws-credentials
-        #        key: accesskey
-        #  - name: AWS_SECRET_ACCESS_KEY
-        #    valueFrom:
-        #      secretKeyRef:
-        #        name: argocd-aws-credentials
-        #        key: secretkey
