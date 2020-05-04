@@ -18,3 +18,5 @@ images:
 #     digest: sha256:0f88f9be58390a5d67c1a7dbcd08691e059fea2dba7cef42dfc41fab513f43bb
   - name: viaductoss/ksops:v2.1.0
     digest: sha256:2f21264a483056102523be37431ba7971d991f2aa872c725f22fa074005b1d26
+generators:
+  - secret-generator.yaml
