@@ -3,9 +3,12 @@ kind: Kustomization
 namespace: argocd
 resources:
   - namespace.yaml
-  # v1.5.2
-  - github.com/argoproj/argo-cd/manifests/cluster-install?ref=c2c19f42ad78ed7a6fb70e86aed117be484feb50
+  # v1.5.3
+  - github.com/argoproj/argo-cd/manifests/cluster-install?ref=095c5d616b1cb39f87e8f7a54cabea2643e1c99a
 patches:
   - argo-cd-repo-server-ksops-patch.yaml
   - argo-cd-allow-alpha-plugins-patch.yaml
   - argo-cd-import-pgp-key.yaml
+images:
+  - name: 'argoproj/argocd:v1.5.3'
+    digest: 60edd3283acbfc83cc6e23218c3882d512273f4a3073940b1619f8d8be9c6a1e
