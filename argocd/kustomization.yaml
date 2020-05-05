@@ -9,6 +9,7 @@ patches:
   - argo-cd-repo-server-ksops-patch.yaml
   - argo-cd-allow-alpha-plugins-patch.yaml
   - argo-cd-import-pgp-key.yaml
+  - argo-cd-repository-credentials-patch.yaml
 images:
   - name: argoproj/argocd:v1.5.3
     digest: sha256:60edd3283acbfc83cc6e23218c3882d512273f4a3073940b1619f8d8be9c6a1e
