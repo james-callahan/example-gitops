@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: example-book
+spec:
+  description: example-book
+  clusterResourceWhitelist:
+  - group: ""
+    kind: Namespace
+  destinations:
+  - namespace: example-book
+    server: https://kubernetes.default.svc
+  sourceRepos:
+  - git@github.com:james-callahan/example-gitops.git
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: example-book
+spec:
+  project: example-book
+  source:
+    path: example-book/
+    repoURL: git@github.com:james-callahan/example-gitops.git
+    targetRevision: HEAD
+  destination:
+    namespace: example-book
+    server: https://kubernetes.default.svc

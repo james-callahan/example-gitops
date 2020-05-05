@@ -5,6 +5,8 @@ resources:
   - namespace.yaml
   # v1.5.3
   - github.com/argoproj/argo-cd/manifests/cluster-install?ref=095c5d616b1cb39f87e8f7a54cabea2643e1c99a
+  # Applications to deploy
+  - applications/example-book.yaml
 patches:
   - argo-cd-repo-server-ksops-patch.yaml
   - argo-cd-allow-alpha-plugins-patch.yaml
