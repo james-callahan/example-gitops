@@ -14,9 +14,10 @@ spec:
       initContainers:
         - name: import-gpg-key
           image: argoproj/argocd:v1.5.3
-          command: ["sh", "-c"]
-          args:
-            - GNUPGHOME=/gnupg-home/.gnupg gpg --import /deploy-pgp-key/deploy-key.asc;
+          command: ["gpg", "--import", "/deploy-pgp-key/deploy-key.asc"]
+          env:
+            - name: GNUPGHOME
+              value: /gnupg-home/.gnupg
           volumeMounts:
             - mountPath: /deploy-pgp-key
               name: deploy-pgp-key
