@@ -7,6 +7,7 @@ resources:
   - github.com/argoproj/argo-cd/manifests/cluster-install?ref=36bade7a2d7b69d1c0b0c4d41191f792a847d61c
   # Applications to deploy
   - applications/example-book.yaml
+  - applications/prometheus-operator.yaml
 patches:
   - argo-cd-repo-server-ksops-patch.yaml
   - argo-cd-allow-alpha-plugins-patch.yaml
