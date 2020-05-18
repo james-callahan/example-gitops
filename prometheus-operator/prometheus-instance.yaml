@@ -66,3 +66,33 @@ spec:
       image: docker.io/jimmidyson/configmap-reload@sha256:d107c7a235c266273b1c3502a391fec374430e5625539403d0de797fa9c556a2
     # - name: thanos-sidecar
     #   image:
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus
+  labels:
+    app: prometheus
+    prometheus: prometheus
+spec:
+  ports:
+  - name: web
+    port: 9090
+    protocol: TCP
+    targetPort: web
+  selector:
+    prometheus: prometheus
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: prometheus-metrics
+  labels:
+    prometheusInstance: default
+spec:
+  selector:
+    matchLabels:
+      app: prometheus
+      prometheus: prometheus
+  endpoints:
+  - port: web
