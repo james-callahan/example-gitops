@@ -5,6 +5,7 @@ resources:
   - namespace.yaml
   # v1.5.5
   - github.com/argoproj/argo-cd/manifests/cluster-install?ref=0fdef4861e12026e133224f7c9413072340e2983
+  - argo-cd-service-monitor.yaml
   # Applications to deploy
   - applications/example-book.yaml
   - applications/prometheus-operator.yaml
