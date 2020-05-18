@@ -3,8 +3,8 @@ kind: Kustomization
 namespace: argocd
 resources:
   - namespace.yaml
-  # v1.5.4
-  - github.com/argoproj/argo-cd/manifests/cluster-install?ref=36bade7a2d7b69d1c0b0c4d41191f792a847d61c
+  # v1.5.5
+  - github.com/argoproj/argo-cd/manifests/cluster-install?ref=0fdef4861e12026e133224f7c9413072340e2983
   # Applications to deploy
   - applications/example-book.yaml
   - applications/prometheus-operator.yaml
@@ -14,8 +14,8 @@ patches:
   - argo-cd-import-pgp-key.yaml
   - argo-cd-repository-credentials-patch.yaml
 images:
-  - name: argoproj/argocd:v1.5.4
-    digest: sha256:9b55703f06eff3b30320109f372fc15092fb07b9e0c1e2ee5c71fd7ff7a14b66
+  - name: argoproj/argocd:v1.5.5
+    digest: sha256:b83f7dafd3d7c21bbaea15d5ce13e699433d7736f5d441e752033663d4fa6e6c
   - name: quay.io/dexidp/dex:v2.22.0
     digest: sha256:01e996b4b60edcc5cc042227c6965dd63ba68764c25d86b481b0d65f6e4da308
   - name: redis:5.0.3
